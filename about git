@@ -1,0 +1,140 @@
+
+############GIT BRANCH MERGE
+Git branch merge #which means putting the branches of git together!
+💖merge branches:
+✨we have the emergency fix ready#we are ready for the emergency fix,and so merge the master#main branch and emergency-fix(紧急修复) branches
+
+💕change to the master branch:
+  [user@localhost]$
+git checkout master
+Swiched to branch 'master'
+  
+💕merge the current branch(master) with emergency-fix branch:
+  [user@localhost]$
+   git merge emergency-fix
+   Updating 09f4acd..dfa79db
+   Fast-forward
+    index.html| 2+-
+    1 file changed,1 insertion(+),1 deletion(-)
+  
+😂Since the emergency-fix branch came directly from master,and no other changes had been made to master while we were working,Git sees this as a continuation of master.So it can
+"Fast-forward",just pointing both master and emergency-fix to the same commit.
+
+😍As master and emergency-fix are essentially the same now,we can delete emergency-fix,as it is no longer needed:
+[user@localhost]$ 
+git branch -d emergency-fix
+Deleted branch emergency-fix (was dfa79db)  
+
+Merge Conflict
+move over to hello-world-images and keep working.#转到hello-world-images并继续工作
+Add another image file(img_hello_git.jpg)
+change index.html
+[user@localhost]$
+git checkout hello-world-images
+Swiched to branch'hello-world-images'
+
+😊example:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello World!"</title>
+<link rel="stylesheet" href="bluestyle.css">
+</head>
+</body>
+<h1>Hello world!</h1>
+<div><img src ="img_hello_world.jpg" alt="Hello world from space" stype="width:100%;max-width:960px"></div>
+<p>This is the first file in my new Git Repo.</p>
+<p>Aa new line in out file!</p>
+<div><img src="img_hello_git.jpg" alt="Hello Git"  style="width:100%;max-width:960px"></div>
+</body>
+</html>
+
+Now we are done with our work here and can stage and commit for this branch:(为这个分支暂存和提交)
+💖git add --all
+  git commit -m "added new image"
+[hello-world-images 1f1584e] added new image
+2 files changed, 1 insertion(+)
+creat mode 100644 img_hello_git.jpg
+
+we see that index.html has been changed in both branches.
+Now we are ready to merge hello-world-images into master.
+what will happen to the changes we recently made in master?
+---------------------------------------------------------------------------------------------------------------------------
+###########GIT BRANCH
+working eith git branches 
+in Git,a branch（分支） is a new/seperate version(新的版本或者分开的版本) of the main repository（主仓库）
+we have a large project,we need to update thhe design on it.
+with git:
+✔with a new branch called new-design.edit the code directly without impacting the main branch
+✔EMERGENCY! There is an unrelated error somewhere else in the project that needs to be fixed ASAP!
+Creat a new branch from the main project called small-error-fix
+Fix the unrelated error and merge the small-error-fix branch with the main branch
+You go back to the new-design branch,and finish the work there
+Merge the new-design branch with main(getting alerted to the small error fix that you were missing)
+
+
+Branches allow you to work on a different parts of a project without impacting the main branch.
+When the work is complete,a branch can be merged with the main project.
+you can even switch between branches and work on different projects without them interfering with each other.
+Branching in Git is very lightweight and fast!
+
+
+New Git Branch:
+Let add some new feachers to out index.html page.(想修改index.html文件中的特点，但是不想破坏主文件)
+we are working in a local repository ,and we do not want to disturb or possibly wreck the main project.
+So we creat a new branch.
+
+git branch hello-world-images    (新建git分支    hello-world-images)
+
+来确认一下：
+git branch
+  hello-world-images
+  *master
+  * means that we are currently on the hello-world-images  branch.
+  
+  checkout是用来检查一个分支的命令。
+  （将我们从当前的分支移动到命令末尾指定的分支）
+git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+git status 
+O branch hello-world-images
+Changes not staged for commit:
+(use "git add ..." to update what will be commited)
+(use "git restore ..." to discard changes in working directory)
+modified:index.html
+ Untracked files:
+ (use 'git add...' to include in what will be commited)
+ img_hello_world.jpg
+
+
+no changes added  to commit(use "git add" and /or "git commit -a")
+
+go through what happens here:
+ There are changes to our index.html,but the file is not staged for commit
+ img_hello_world.jpg is not tracked
+ 
+add files to Staging Environment for this branch:
+ 
+ 
+git  add --all   git 暂存所有的改变.
+使用 --all 而不是单个文件名将暂存所有更改的（新的、修改的和删除的）文件
+
+检查当前分支的状态：
+git status
+On branch hello-world-images
+Changes to be committed:
+(use "git restore --staged..."to unstage)
+new file:img_hello_world.jpg
+modified:index.html
+
+we are happy with our changes changes.So we will commit them to the branch.
+
+
+.............to be continued.
+
+
+
+
+
+
